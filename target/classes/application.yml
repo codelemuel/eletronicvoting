@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /eletronic-voting-backend
+
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/db_eletronicvoting
+    username: ${auth-username}
+    password: ${auth-password}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    hibernate.ddl-auto: update
+    show-sql: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+validator-cpf-client: https://user-info.herokuapp.com/users
